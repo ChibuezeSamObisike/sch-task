@@ -120,7 +120,7 @@ export default function Home() {
           mx: 10,
           borderRadius: 30,
         }}
-        open={openDrawer}
+        open={!openDrawer}
         onClose={() => setOpenDrawer(false)}
         onOpen={() => setOpenDrawer(true)}
       >
