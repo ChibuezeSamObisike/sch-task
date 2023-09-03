@@ -17,11 +17,13 @@ import DayNumber from "../components/DayNumber";
 import Task from "../components/Task";
 import ConfirmTodo from "../components/ConfirmTodo";
 import AddTodo from "../components/AddTodo";
+import Navbar from "../components/Navbar";
 
 export default function Home() {
   const [openDrawer, setOpenDrawer] = useState<boolean>(true);
   return (
     <>
+      <Navbar />
       <Container
         sx={{
           mt: 3,
@@ -116,24 +118,29 @@ export default function Home() {
       </Paper>
       <SwipeableDrawer
         anchor={"bottom"}
+        draggable
         sx={{
           mx: 10,
-          borderRadius: 30,
+          //   borderRadius: 30,
+          "& .css-9emuhu-MuiPaper-root-MuiDrawer-paper": {
+            background: "none",
+            boxShadow: 0,
+          },
         }}
-        open={!openDrawer}
+        open={openDrawer}
         onClose={() => setOpenDrawer(false)}
         onOpen={() => setOpenDrawer(true)}
       >
         <Box
           sx={{
-            borderRadius: "30px",
             p: 5,
-            borderTopLeftRadius: 8,
-            borderTopRightRadius: 8,
+            paddingBottom: 15,
+            borderTopLeftRadius: pxToRem(28),
+            borderTopRightRadius: pxToRem(28),
+            bgcolor: "white",
           }}
-          height='50vh'
         >
-          Hello world
+          <AddTodo />
         </Box>
       </SwipeableDrawer>
     </>
