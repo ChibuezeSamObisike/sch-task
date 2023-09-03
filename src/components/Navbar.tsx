@@ -12,7 +12,7 @@ export default function Navbar() {
       elevation={0}
       sx={{
         elevation: 0,
-        p: 3,
+        py: 3,
         background: "white",
         color: "black",
         borderBottom: "1px solid #EAECF0",
